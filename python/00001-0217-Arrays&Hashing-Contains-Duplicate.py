@@ -3,28 +3,6 @@ Problem Description:
 You're given an integer array nums. 
 The task is to determine if this array contains any duplicate numbers. 
 If there's any number that appears more than once, you should return true, otherwise, return false.
-
-Example:
-Example 1:
-
-Input: nums = [1,2,3,1]
-Output: true
-
-This is because the number 1 appears more than once.
-
-Example 2:
-
-Input: nums = [1,2,3,4]
-Output: false
-
-All numbers are unique, so there's no duplicate.
-
-Example 3:
-
-Input: nums = [1,1,1,3,3,4,3,2,4,2]
-Output: true
-
-This array has multiple duplicates like 1, 3, 4, and 2.
 """
 
 """

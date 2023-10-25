@@ -36,7 +36,7 @@ It checks each number to see if it's already present in its respective row, colu
 If it is, then the Sudoku is not valid. 
 Otherwise, it adds the number to the set for that row, column, or square.
 """
-
+import collections
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         # Using defaultdict to initialize sets for each row, column and 3x3 square.

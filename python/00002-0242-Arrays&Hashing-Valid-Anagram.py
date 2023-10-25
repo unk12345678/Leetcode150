@@ -2,21 +2,6 @@
 Problem Description:
 Given two strings s and t, your task is to determine if string t is an anagram of string s. 
 An anagram is a word or phrase that is formed by rearranging the letters of another word or phrase, with each letter being used only once.
-
-Example:
-Example 1:
-
-Input: s = "anagram", t = "nagaram"
-Output: true
-
-By rearranging the letters in "anagram", we can form the word "nagaram".
-
-Example 2:
-
-Input: s = "rat", t = "car"
-Output: false
-
-The two words have different sets of letters, so they can't be anagrams of each other.
 """
 """
 Approaches:

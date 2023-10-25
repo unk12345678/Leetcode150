@@ -3,23 +3,6 @@ Problem Description:
 You're given an array of integers, nums. 
 Your task is to produce a new array where each index i in the new array contains the product of all numbers in nums except nums[i]. 
 You're not allowed to use division and the solution must run in O(n) time.
-
-Example:
-Example 1:
-
-Input: nums = [1,2,3,4]
-Output: [24,12,8,6]
-
-Example 2:
-
-Input: nums = [-1,1,0,-3,3]
-Output: [0,0,9,0,0]
-
-Explanation of the Current Code:
-The current code approach is to use two iterations:
-
-First iteration populates the res list with prefix products.
-Second iteration modifies the res list by multiplying each entry with the corresponding postfix product.
 """
 """
 Approaches:

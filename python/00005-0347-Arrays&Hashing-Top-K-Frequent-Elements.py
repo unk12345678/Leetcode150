@@ -2,20 +2,6 @@
 Problem Description:
 You're given an array of integers, nums, and an integer, k. 
 Your task is to determine the k most frequent elements from nums.
-
-Example:
-Example 1:
-
-Input: nums = [1,1,1,2,2,3], k = 2
-Output: [1,2]
-
-Example 2:
-
-Input: nums = [1], k = 1
-Output: [1]
-
-Explanation of the Current Code:
-The idea here is to use two lists: one for counting occurrences of each number (count) and another one (freq) to store numbers that have a specific frequency. The number at the ith index of the freq list has a frequency of i.
 """
 """
 Approaches:

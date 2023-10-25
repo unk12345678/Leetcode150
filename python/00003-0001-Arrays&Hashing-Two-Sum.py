@@ -3,26 +3,6 @@ Problem Description:
 You're given an array of integers nums and an integer target. 
 The task is to find two distinct indices i and j such that nums[i] + nums[j] = target and return these indices. 
 It's given that there is exactly one valid answer.
-
-Example:
-Example 1:
-
-Input: nums = [2,7,11,15], target = 9
-Output: [0,1]
-Explanation: The numbers 2 and 7 (located at indices 0 and 1) add up to 9.
-
-Example 2:
-
-Input: nums = [3,2,4], target = 6
-Output: [1,2]
-Explanation: The numbers 2 and 4 (located at indices 1 and 2) add up to 6.
-
-Example 3:
-
-Input: nums = [3,3], target = 6
-Output: [0,1]
-Explanation: Both numbers 3 (located at indices 0 and 1) add up to 6.
-
 """
 
 """

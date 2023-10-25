@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub File Viewer</title>
+</head>
+<body>
+    <select id="fileDropdown">
+        <option>Select a file</option>
+    </select>
+    <button onclick="loadFileContent()">Select</button>
+    <pre id="fileContent"></pre>
+
+    <script>
+        window.onload = function() {
+            fetch('/get_filenames').then(response => response.json()).then(data => {
+                const dropdown = document.getElementById('fileDropdown');
+                data.forEach(filename => {
+                    const processedName = processFilename(filename);
+                    const option = document.createElement('option');
+                    option.text = processedName;
+                    option.value = filename;
+                    dropdown.add(option);
+                });
+            });
+        };
+        
+        
+        function processFilename(filename) {
+            // Remove numerical prefix and file extension
+            let processedName = filename.replace(/^\d+-/, '').replace('.py', '');
+            
+            // Replace dashes with spaces
+            processedName = processedName.replace(/-/g, ' ');
+        
+            return processedName.charAt(0).toUpperCase() + processedName.slice(1);
+        }
+        
+
+        function loadFileContent() {
+            const dropdown = document.getElementById('fileDropdown');
+            const filename = dropdown.value;
+            if (filename) {
+                fetch(`/get_file_content/${filename}`).then(response => response.json()).then(data => {
+                    const fileContentElem = document.getElementById('fileContent');
+                    fileContentElem.textContent = window.atob(data.content);
+
+                });
+            }
+        }
+    </script>
+</body>
+</html>

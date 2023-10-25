@@ -50,12 +50,12 @@
         
         function processFilename(filename) {
             // Remove numerical prefix and file extension
-            let processedName = filename.replace(/^\d+-/, '').replace('.py', '');
+            let processedName = filename; //.replace(/^\d+-/, '').replace('.py', '');
             
             // Replace dashes with spaces
             processedName = processedName.replace(/-/g, ' ');
         
-            return processedName.charAt(0).toUpperCase() + processedName.slice(1);
+            return processedName; //.charAt(0).toUpperCase() + processedName.slice(1);
         }
         
 

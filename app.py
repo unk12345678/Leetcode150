@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-BASE_URL = "https://api.github.com/repos/neetcode-gh/leetcode/contents/python"
+BASE_URL = "https://api.github.com/repos/unk12345678/Leetcode150/tree/main/python"
 
 @app.route('/')
 def index():

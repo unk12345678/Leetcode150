@@ -1,6 +1,7 @@
 """
 Problem Description:
-You're given an array of integers, nums, and an integer, k. Your task is to determine the k most frequent elements from nums.
+You're given an array of integers, nums, and an integer, k. 
+Your task is to determine the k most frequent elements from nums.
 
 Example:
 Example 1:

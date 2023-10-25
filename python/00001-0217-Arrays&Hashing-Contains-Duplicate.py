@@ -1,6 +1,8 @@
 """
 Problem Description:
-You're given an integer array nums. The task is to determine if this array contains any duplicate numbers. If there's any number that appears more than once, you should return true, otherwise, return false.
+You're given an integer array nums. 
+The task is to determine if this array contains any duplicate numbers. 
+If there's any number that appears more than once, you should return true, otherwise, return false.
 
 Example:
 Example 1:

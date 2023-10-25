@@ -1,6 +1,8 @@
 """
 Problem Description:
-You're given an array of strings, strs. Your task is to group the anagrams together. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+You're given an array of strings, strs. 
+Your task is to group the anagrams together. 
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 Example:
 Example 1:

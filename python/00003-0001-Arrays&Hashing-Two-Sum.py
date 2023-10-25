@@ -1,6 +1,8 @@
 """
 Problem Description:
-You're given an array of integers nums and an integer target. The task is to find two distinct indices i and j such that nums[i] + nums[j] = target and return these indices. It's given that there is exactly one valid answer.
+You're given an array of integers nums and an integer target. 
+The task is to find two distinct indices i and j such that nums[i] + nums[j] = target and return these indices. 
+It's given that there is exactly one valid answer.
 
 Example:
 Example 1:

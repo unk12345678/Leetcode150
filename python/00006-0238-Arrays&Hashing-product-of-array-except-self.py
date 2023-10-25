@@ -1,6 +1,8 @@
 """
 Problem Description:
-You're given an array of integers, nums. Your task is to produce a new array where each index i in the new array contains the product of all numbers in nums except nums[i]. You're not allowed to use division and the solution must run in O(n) time.
+You're given an array of integers, nums. 
+Your task is to produce a new array where each index i in the new array contains the product of all numbers in nums except nums[i]. 
+You're not allowed to use division and the solution must run in O(n) time.
 
 Example:
 Example 1:

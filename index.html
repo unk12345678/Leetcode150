@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub File Viewer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    select, button {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    pre {
+        border: 1px solid #ddd;
+        padding: 10px;
+        background-color: #f8f8f8;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #1E1E1E;
+        color: #D4D4D4;
+    }
+
+    pre {
+        background-color: #1E1E1E;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    </style>
+    
+</style>
+
+<body>
+    
+    <select id="fileDropdown" onchange="loadFileContent()">
+        <option selected disabled>Select a file</option>
+    </select>
+    <pre><code id="fileContent" class="python"></code></pre>
+
+    <script>
+        const BASE_URL = "https://api.github.com/repos/unk12345678/Leetcode150/contents/python";
+
+        window.onload = function() {
+            fetch(BASE_URL)
+                .then(response => response.json())
+                .then(data => {
+                    const filenames = data
+                        .filter(file => file.type === 'file' && file.name.endsWith('.py'))
+                        .map(file => file.name);
+
+                    const dropdown = document.getElementById('fileDropdown');
+                    filenames.forEach(filename => {
+                        const processedName = processFilename(filename);
+                        const option = document.createElement('option');
+                        option.text = processedName;
+                        option.value = filename;
+                        dropdown.add(option);
+                    });
+                });
+        };
+
+        function processFilename(filename) {
+            // Remove numerical prefix and file extension
+            let processedName = filename;
+            // Replace dashes with spaces
+            processedName = processedName.replace(/-/g, ' ');
+            return processedName;
+        }
+
+        function loadFileContent() {
+            const dropdown = document.getElementById('fileDropdown');
+            const filename = dropdown.value;
+            if (filename) {
+                fetch(`${BASE_URL}/${filename}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const fileContentElem = document.getElementById('fileContent');
+                        fileContentElem.textContent = window.atob(data.content);
+                        hljs.highlightBlock(fileContentElem);
+                    }).catch(error => {
+                        const fileContentElem = document.getElementById('fileContent');
+                        fileContentElem.textContent = "Failed to fetch file content";
+                        hljs.highlightBlock(fileContentElem);
+                    });
+            }
+        }
+                
+    </script>
+</body>
+</html>
